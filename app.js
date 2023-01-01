@@ -39,6 +39,9 @@ async function fetchData(url) {
 	return fetch_data
 }
 
+app.get('/', (req, res) => {
+    res.send("Route: /api/:ign_game_id");
+});
 
 app.get("/api/:id", async (req, res) => {
 	const full_data = await fetchData(url + req.params.id);
